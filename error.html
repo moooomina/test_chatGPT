@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ai를 활용한 문제해결능력 기르기</title>
+</head>
+<body>
+    <main>
+        <form action="post" id="frm">
+            <fieldset>
+                <legend class="skip">templates</legend>
+                <input type="text" name="userId" id="userId" placeholder="아이디를 입력하세요">
+                <input type="password" name="userPw" id="userPw" placeholder="비밀번호를 입력하세요">
+                <p class="error"><!--에러출력위치--></p>
+                <button type="button" id="btn">login</button>
+            </fieldset>
+        </form>
+    </main>
+    <script>
+        const inputId = document.querySelector('#userId'); // 오류 1: '#user-Id'가 아닌 '#userId'로 수정
+        const inputPw = document.querySelector('#userPw'); // 오류 2: '#user-Pw'가 아닌 '#userPw'로 수정
+        const errorP = document.querySelector('.error');
+        const btn = document.querySelector('#btn');
+
+        btn.addEventListener('click', () => { // 오류 3: 'addEventListner'가 아닌 'addEventListener'로 수정
+            if (inputId.value === '' || inputPw.value === '') { // 오류 4: 대입 연산자 '='가 아닌 비교 연산자 '==='로 수정
+                errorP.innerText = '아이디, 비밀번호를 입력하세요';
+            } else {
+                alert('로그인 성공'); // 오류 5: 'document.'이 아닌 'alert'로 수정
+                errorP.innerText = ''; // 오류 6: 'innerTxt'가 아닌 'innerText'로 수정
+            }
+        });
+    </script>
+</body>
+</html>
